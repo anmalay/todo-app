@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  font-family: 'Roboto', -apple-system, system-ui, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* & - сокращенно todo_sidebar*/
+.todo {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 750px;
+  height: 530px;
+  transform: translate(-50%, -50%); /* хак выравнить по центру*/
+  box-shadow: 1px 2px 20px #f3f3f3; /*тень*/
+  border-radius: 10px;
+  border: 1px solid #f1f1f1;
+  font-size: 14px;
+
+  &_sidebar {
+    background-color: #f4f6f8;
+    width: 200px;
+    height: calc(100% - 120px); /*чтобы сайдбар не выходил наружу */
+    border-right: 1px solid #f1f1f1;
+    padding: 60px 20px;
+  }
+
+  &_tasks {
+    flex: 1;
+    padding: 60px;
+  }
+
+}
+
+
+.button {
+  background: #4DD599;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color: darken(#4DD599, 6%); /*функция из scss утемнить цвет на 6%*/
+  }
+
+  &:active {
+    background-color: darken(#4DD599, 10%);
+  }
+
+  &-grey {
+    background: #F4F6F8;
+    color: #444444;
+
+    &:hover {
+      background: darken($color: #F4F6F8, $amount: 3%)
+    }
+
+    &:active {
+      background: darken($color: #F4F6F8, $amount: 6%)
+    }
+  }
+
+}
+
+.field {
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 14px;
+
+  &:focus {
+    border-color: #dbdbdb;
+  }
+}

@@ -1,0 +1,46 @@
+.add_list {
+
+    &-popup {
+        width: 235px;
+        height: 150px;
+        background: #FFFFFF;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        padding: 18px;
+        top: -25px;
+        position: relative; // внутри вложенные элементы position: absolute не будут выходить за рамки допустимого блока
+
+        .button {
+            width: 100%;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        &-close-btn {
+            position: absolute;
+            right: -8px;
+            top: -8px;
+            cursor: pointer;
+
+        }
+
+        &_colors {
+            margin-top: 12px;
+            position: static;
+            display: flex;
+            justify-content: space-between;
+
+            .badge {
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+                border: 2px solid transparent; /*при авктивном badge увеличивается на 2px и выделяется. это надо чтобы все были увеличены на 2px с прозрачным border*/
+
+                &.active {
+                    border: 2px solid #525252;
+                }
+            }
+        }
+
+    }
+}

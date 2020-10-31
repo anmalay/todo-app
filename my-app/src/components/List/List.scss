@@ -1,0 +1,72 @@
+.list {
+
+    $self: &;
+
+    margin-bottom: 30px;
+
+    &_add-button {
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &_remove-icon {
+        opacity: 0;
+
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+
+    li {
+        transition: background-color 0.15s ease-in-out;
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        cursor: pointer;
+        position: relative;
+
+        &:hover #{$self}_remove-icon {
+            opacity: 0.1;
+        }
+
+        #{$self}_remove-icon {
+            transition: opacity 0.15s ease-in-out;
+            opacity: 0;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        span {
+            flex: 1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 160px;
+            white-space: nowrap;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+        }
+
+        &.active {
+            background: #FFFFFF;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+        }
+
+        i {
+            display: inline-flex;
+            margin-right: 8px;
+            svg {
+                opacity: 0.6;
+            }
+        }
+
+    }
+}
